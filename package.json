@@ -10,6 +10,11 @@
     "frontend-install": "npm install --prefix frontend",
     "install-all": "npm install && npm run backend-install && npm run frontend-install"
   },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2"
   }
