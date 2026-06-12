@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2B Corporate Travel Portal - Manivtha Tours & Travels</title>
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Link B2B Frontend Logic -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass">
+      <div class="logo-area">
+        <div class="logo-icon"><i class="fa-solid fa-car-side"></i></div>
+        <div class="logo-text">
+          <h2>Manivtha</h2>
+          <p>Tours & Travels</p>
+        </div>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active" data-tab="tab-dashboard">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="tab-trips">
+          <i class="fa-solid fa-route"></i>
+          <span>Trip Usage Logs</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="tab-workflow">
+          <i class="fa-solid fa-bars-progress"></i>
+          <span>Booking Lifecycle</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="tab-invoices">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>GST Invoices</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="tab-statements">
+          <i class="fa-solid fa-download"></i>
+          <span>Statements Portal</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="tab-queries">
+          <i class="fa-solid fa-circle-question"></i>
+          <span>Accounts Queries</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="tab-insights">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>AI Optimization</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="profile-card">
+          <div class="profile-avatar"><i class="fa-solid fa-building"></i></div>
+          <div class="profile-info">
+            <h4 id="profile-company-name">TechCorp Solutions</h4>
+            <p id="profile-account-id">ID: MC-TECH-9082</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top Bar -->
+      <header class="topbar glass">
+        <div class="page-title-area">
+          <h1 id="active-tab-title">Dashboard Overview</h1>
+          <p class="subtitle" id="active-tab-desc">Real-time usage statistics and account billing status.</p>
+        </div>
+        <div class="header-actions">
+          <div class="badge-pill premium">
+            <span class="pulse-dot"></span>
+            <span id="profile-payment-terms">Net 30 Days</span>
+          </div>
+          <button class="theme-toggle" id="theme-toggle-btn">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Container -->
+      <div class="content-body">
+        
+        <!-- ================= DASHBOARD TAB ================= -->
+        <section id="tab-dashboard" class="tab-pane active">
+          <!-- Metric Cards Grid -->
+          <div class="metrics-grid">
+            <div class="metric-card glass">
+              <div class="card-header">
+                <span>Monthly Usage (June)</span>
+                <div class="card-icon usage"><i class="fa-solid fa-wallet"></i></div>
+              </div>
+              <div class="card-body">
+                <h2 id="stat-monthly-usage">₹54,320.00</h2>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" id="usage-progress" style="width: 65%"></div>
+                </div>
+                <p class="card-footnote">Current cycle consumption</p>
+              </div>
+            </div>
+
+            <div class="metric-card glass">
+              <div class="card-header">
+                <span>Outstanding Balance</span>
+                <div class="card-icon outstanding"><i class="fa-solid fa-receipt"></i></div>
+              </div>
+              <div class="card-body">
+                <h2 id="stat-outstanding">₹22,050.00</h2>
+                <div class="progress-bar-container">
+                  <div class="progress-bar danger" id="outstanding-progress" style="width: 25%"></div>
+                </div>
+                <p class="card-footnote">Pending invoice clearances</p>
+              </div>
+            </div>
+
+            <div class="metric-card glass">
+              <div class="card-header">
+                <span>Trips Recorded (June)</span>
+                <div class="card-icon trips"><i class="fa-solid fa-car"></i></div>
+              </div>
+              <div class="card-body">
+                <h2 id="stat-trips-count">18</h2>
+                <div class="stat-indicator positive">
+                  <i class="fa-solid fa-circle-check"></i> All routes validated
+                </div>
+                <p class="card-footnote">Active vehicle allocations</p>
+              </div>
+            </div>
+
+            <div class="metric-card glass">
+              <div class="card-header">
+                <span>Credit Available</span>
+                <div class="card-icon credit"><i class="fa-solid fa-shield-halved"></i></div>
+              </div>
+              <div class="card-body">
+                <h2 id="stat-credit-available">₹423,630.00</h2>
+                <div class="stat-limit">
+                  <span>Limit: <strong id="stat-credit-limit">₹500,000.00</strong></span>
+                </div>
+                <p class="card-footnote">Account credit threshold</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Grid (Chart & Profile Details) -->
+          <div class="dashboard-details-grid">
+            <!-- Travel Expenditures Chart -->
+            <div class="chart-container glass">
+              <div class="block-header">
+                <h3><i class="fa-solid fa-chart-line"></i> Expenditures Breakdown</h3>
+                <p>Monthly travel distribution & GST metrics</p>
+              </div>
+              <div class="mock-chart-visual">
+                <!-- SVG Chart representation -->
+                <svg viewBox="0 0 500 220" class="expenditure-svg">
+                  <!-- Grid Lines -->
+                  <line x1="50" y1="30" x2="480" y2="30" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+                  <line x1="50" y1="80" x2="480" y2="80" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+                  <line x1="50" y1="130" x2="480" y2="130" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+                  <line x1="50" y1="180" x2="480" y2="180" stroke="rgba(255,255,255,0.1)"/>
+                  
+                  <!-- Labels Y -->
+                  <text x="15" y="35" fill="rgba(255,255,255,0.4)" font-size="10">₹60K</text>
+                  <text x="15" y="85" fill="rgba(255,255,255,0.4)" font-size="10">₹40K</text>
+                  <text x="15" y="135" fill="rgba(255,255,255,0.4)" font-size="10">₹20K</text>
+                  <text x="25" y="185" fill="rgba(255,255,255,0.4)" font-size="10">0</text>
+                  
+                  <!-- Area fill -->
+                  <path d="M 80,180 L 180,140 L 280,134 L 380,120 L 480,95 L 480,180 Z" fill="url(#gradient-chart-area)" opacity="0.3" />
+                  
+                  <!-- Line Plot -->
+                  <path d="M 80,180 Q 180,140 280,134 T 380,120 T 480,95" fill="none" stroke="var(--primary-glow)" stroke-width="3" />
+                  
+                  <!-- Circles for points -->
+                  <circle cx="80" cy="180" r="4" fill="var(--primary-glow)"/>
+                  <circle cx="180" cy="140" r="4" fill="var(--primary-glow)"/>
+                  <circle cx="280" cy="134" r="4" fill="var(--primary-glow)"/>
+                  <circle cx="380" cy="120" r="4" fill="var(--primary-glow)"/>
+                  <circle cx="480" cy="95" r="4" fill="var(--primary-glow)"/>
+                  
+                  <!-- Labels X -->
+                  <text x="70" y="202" fill="rgba(255,255,255,0.6)" font-size="11">Feb</text>
+                  <text x="170" y="202" fill="rgba(255,255,255,0.6)" font-size="11">Mar</text>
+                  <text x="270" y="202" fill="rgba(255,255,255,0.6)" font-size="11">Apr</text>
+                  <text x="370" y="202" fill="rgba(255,255,255,0.6)" font-size="11">May</text>
+                  <text x="460" y="202" fill="rgba(255,255,255,0.6)" font-size="11">Jun</text>
+
+                  <!-- Gradients -->
+                  <defs>
+                    <linearGradient id="gradient-chart-area" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="var(--primary-glow)"/>
+                      <stop offset="100%" stop-color="transparent"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Profile and billing parameters -->
+            <div class="billing-details-box glass">
+              <div class="block-header">
+                <h3><i class="fa-solid fa-briefcase"></i> Corporate Account Profile</h3>
+                <p>Taxation and company credentials</p>
+              </div>
+              <ul class="profile-details-list">
+                <li>
+                  <span class="detail-label">GSTIN ID</span>
+                  <span class="detail-value text-glow" id="prof-gstin">36AAAAA1111A1Z1</span>
+                </li>
+                <li>
+                  <span class="detail-label">Billing Hub</span>
+                  <span class="detail-value" id="prof-address">Hyderabad</span>
+                </li>
+                <li>
+                  <span class="detail-label">Accounts Liaison</span>
+                  <span class="detail-value" id="prof-contact">Rajesh Kumar</span>
+                </li>
+                <li>
+                  <span class="detail-label">Email Node</span>
+                  <span class="detail-value" id="prof-email">accounts@manivtha.com</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= TRIP USAGE LOGS TAB ================= -->
+        <section id="tab-trips" class="tab-pane">
+          <div class="filters-bar glass">
+            <div class="search-box">
+              <i class="fa-magnifying-glass fa-solid"></i>
+              <input type="text" id="trip-search-input" placeholder="Search employee, vehicle, status...">
+            </div>
+            <div class="filter-controls">
+              <label for="trip-status-select"><i class="fa-solid fa-sliders"></i> Status:</label>
+              <select id="trip-status-select" class="styled-select-small">
+                <option value="All">All Statuses</option>
+                <option value="Completed">Completed</option>
+                <option value="Ongoing">Ongoing</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+              <button class="btn btn-secondary-small" id="btn-download-trips-csv">
+                <i class="fa-solid fa-file-csv"></i> Download CSV
+              </button>
+            </div>
+          </div>
+
+          <div class="table-container glass">
+            <table class="data-table" id="trips-table">
+              <thead>
+                <tr>
+                  <th>Trip ID</th>
+                  <th>Employee Name</th>
+                  <th>Date</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Vehicle Type</th>
+                  <th>Status</th>
+                  <th>Cost (₹)</th>
+                </tr>
+              </thead>
+              <tbody id="trips-table-body">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ================= BOOKING LIFECYCLE TAB ================= -->
+        <section id="tab-workflow" class="tab-pane">
+          <div class="workflow-dashboard-layout">
+            <!-- Left Card: Simulator Control -->
+            <div class="workflow-simulator-card glass" style="padding: 24px;">
+              <h3><i class="fa-solid fa-circle-play"></i> Lifecycle Simulator</h3>
+              <p>Advance a booking through all 11 lifecycle stages to see how data flows from request to payment closure.</p>
+              
+              <div class="simulator-actions" style="margin-top: 20px; display: flex; flex-direction: column; gap: 14px;">
+                <div class="form-group">
+                  <label for="simulation-employee">Passenger / Employee Name</label>
+                  <input type="text" id="simulation-employee" value="Vijay Sharma" class="date-input" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                  <label for="simulation-route">Route Destination</label>
+                  <input type="text" id="simulation-route" value="Madhapur to Hyderabad Airport" class="date-input" style="width: 100%;">
+                </div>
+                
+                <div style="display: flex; gap: 10px;">
+                  <button class="btn btn-primary" id="btn-start-simulation">
+                    <i class="fa-solid fa-play"></i> Start Simulation
+                  </button>
+                  <button class="btn btn-secondary-small" id="btn-next-step" disabled style="padding: 10px 14px;">
+                    <i class="fa-solid fa-forward"></i> Next Step
+                  </button>
+                  <button class="btn btn-action" id="btn-reset-simulation" style="padding: 10px 14px;">
+                    <i class="fa-solid fa-rotate-right"></i> Reset
+                  </button>
+                </div>
+              </div>
+
+              <!-- Console Logger display -->
+              <div class="simulator-console glass" style="margin-top: 24px; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; font-family: monospace; font-size: 11.5px; height: 160px; overflow-y: auto;">
+                <div style="color: var(--primary-glow); border-bottom: 1px solid var(--glass-border); padding-bottom: 4px; margin-bottom: 8px;">System Event Logs</div>
+                <div id="sim-console-logs" style="color: rgba(255,255,255,0.7); display: flex; flex-direction: column; gap: 6px;">
+                  <div>[System Idle] Press Start Simulation to begin...</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Card: Steps Progress Tracker Stepper -->
+            <div class="workflow-stepper-card glass" style="padding: 24px;">
+              <h3><i class="fa-solid fa-route"></i> 11-Step Booking Lifecycle</h3>
+              <p>Active Stage: <strong id="sim-active-stage-label" style="color: var(--primary-glow);">Not Started</strong></p>
+              
+              <div class="stepper-vertical-container" style="position: relative; margin-top: 24px; padding-left: 36px; display: flex; flex-direction: column; gap: 18px;">
+                <!-- Vertical Line -->
+                <div class="stepper-line" style="position: absolute; left: 13px; top: 10px; bottom: 10px; width: 3px; background: rgba(255,255,255,0.06); transition: all 0.3s ease;">
+                  <div class="stepper-line-active" id="stepper-progress-fill" style="width: 100%; height: 0%; background: linear-gradient(to bottom, var(--primary), var(--secondary)); transition: height 0.3s ease;"></div>
+                </div>
+
+                <!-- Step items -->
+                <div class="step-node-item" data-step="1">
+                  <div class="step-bullet">1</div>
+                  <div class="step-details">
+                    <strong>Employee Request</strong>
+                    <span>Trip itinerary requested by passenger via mobile application.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="2">
+                  <div class="step-bullet">2</div>
+                  <div class="step-details">
+                    <strong>Corporate Approval</strong>
+                    <span>Authorized by accounts division based on credit policy.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="3">
+                  <div class="step-bullet">3</div>
+                  <div class="step-details">
+                    <strong>Travel Vendor Receives Request</strong>
+                    <span>Manivtha Tours dispatch office registers incoming booking request.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="4">
+                  <div class="step-bullet">4</div>
+                  <div class="step-details">
+                    <strong>Vehicle & Driver Allocation</strong>
+                    <span>Cab and professional chauffeur assigned based on route availability.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="5">
+                  <div class="step-bullet">5</div>
+                  <div class="step-details">
+                    <strong>Booking Confirmation</strong>
+                    <span>SMS / Email reservation alerts dispatched with driver details.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="6">
+                  <div class="step-bullet">6</div>
+                  <div class="step-details">
+                    <strong>Trip Execution</strong>
+                    <span>Chauffeur reports for pickup. GPS real-time transit active.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="7">
+                  <div class="step-bullet">7</div>
+                  <div class="step-details">
+                    <strong>Trip Completion</strong>
+                    <span>Passenger dropped safely. Distance, tolls, and duty slip generated.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="8">
+                  <div class="step-bullet">8</div>
+                  <div class="step-details">
+                    <strong>Invoice Generation</strong>
+                    <span>Standard taxable GST billing invoice calculated and filed.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="9">
+                  <div class="step-bullet">9</div>
+                  <div class="step-details">
+                    <strong>Monthly Billing Statement</strong>
+                    <span>Consolidated statement dispatched to accounts team for cycle reconciliation.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="10">
+                  <div class="step-bullet">10</div>
+                  <div class="step-details">
+                    <strong>Payment Collection</strong>
+                    <span>Electronic transfer processed via NEFT / corporate card.</span>
+                  </div>
+                </div>
+
+                <div class="step-node-item" data-step="11">
+                  <div class="step-bullet">11</div>
+                  <div class="step-details">
+                    <strong>Booking Closed</strong>
+                    <span>Duty ledger settled. Accounts records successfully audited and closed.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= GST INVOICES TAB ================= -->
+        <section id="tab-invoices" class="tab-pane">
+          <div class="table-container glass">
+            <table class="data-table" id="invoices-table">
+              <thead>
+                <tr>
+                  <th>Invoice Number</th>
+                  <th>Billing Period</th>
+                  <th>Base Amount (₹)</th>
+                  <th>CGST (9%) (₹)</th>
+                  <th>SGST (9%) (₹)</th>
+                  <th>Total Amount (₹)</th>
+                  <th>Payment Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="invoices-table-body">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ================= STATEMENTS PORTAL TAB ================= -->
+        <section id="tab-statements" class="tab-pane">
+          <div class="statements-grid">
+            <!-- Left Card: Generate Form -->
+            <div class="statement-generation-box glass">
+              <h3><i class="fa-solid fa-arrows-spin"></i> Generate New Statement</h3>
+              <p>Generate a summary log for reconciliations.</p>
+              
+              <div class="form-group">
+                <label>Select Financial Cycle / Month</label>
+                <select id="statement-period-select" class="styled-select">
+                  <option value="Q1 FY26">Q1 FY26 (Apr - Jun 2026)</option>
+                  <option value="May 2026">May 2026</option>
+                  <option value="April 2026">April 2026</option>
+                  <option value="Q4 FY25">Q4 FY25 (Jan - Mar 2025)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Date Range Selector (UI Only)</label>
+                <div class="date-range-ui">
+                  <input type="date" value="2026-04-01" class="date-input">
+                  <span>to</span>
+                  <input type="date" value="2026-06-30" class="date-input">
+                </div>
+              </div>
+
+              <button class="btn btn-primary" id="generate-statement-btn" style="margin-top: 15px;">
+                <i class="fa-solid fa-gears"></i> Generate Account Statement
+              </button>
+            </div>
+
+            <!-- Right Card: Statement Downloads History -->
+            <div class="statement-history-box glass">
+              <h3><i class="fa-solid fa-clock-rotate-left"></i> Downloads Archive</h3>
+              <p>Click on any entry to download previously generated files.</p>
+              <div class="statement-downloads-list" id="statements-download-container">
+                <!-- Dynamic statement list -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= ACCOUNTS QUERIES TAB ================= -->
+        <section id="tab-queries" class="tab-pane">
+          <div class="queries-split-layout glass">
+            <!-- Left Side: Ticket List -->
+            <div class="queries-sidebar">
+              <div class="sidebar-header">
+                <h3><i class="fa-solid fa-list-check"></i> Queries Ledger</h3>
+              </div>
+              <div class="ticket-sidebar-list" id="ticket-list-container">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+            
+            <!-- Right Side: Chat & Thread Detail -->
+            <div class="chat-thread-container">
+              <div class="chat-header" id="chat-active-header">
+                <h4 id="chat-ticket-subject">Select a ticket from the ledger to begin</h4>
+                <p id="chat-ticket-meta">Status: -- | ID: --</p>
+              </div>
+              <div class="chat-messages-area" id="chat-messages-container">
+                <div class="chat-empty-state">
+                  <i class="fa-solid fa-comments"></i>
+                  <p>Choose an active account query from the left menu to view detailed logs and message the support coordinator.</p>
+                </div>
+              </div>
+              <div class="chat-input-area">
+                <input type="text" id="chat-reply-input" placeholder="Type clarification message..." disabled>
+                <button class="btn btn-primary" id="chat-reply-send-btn" disabled>
+                  <i class="fa-solid fa-paper-plane"></i> Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= AI OPTIMIZATION TAB ================= -->
+        <section id="tab-insights" class="tab-pane">
+          <div class="insights-dashboard">
+            <!-- Metric Cards Row -->
+            <div class="ai-cards-row">
+              <div class="ai-metric-card glass">
+                <div class="ai-card-icon route"><i class="fa-solid fa-diamond-turn-right"></i></div>
+                <div class="ai-card-content">
+                  <span class="ai-card-label">Route Optimizations</span>
+                  <h2 id="ai-stat-routes">3 Routes Available</h2>
+                </div>
+              </div>
+              
+              <div class="ai-metric-card glass">
+                <div class="ai-card-icon savings"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                <div class="ai-card-content">
+                  <span class="ai-card-label">Projected Savings</span>
+                  <h2 id="ai-stat-savings">₹14,500.00 / mo</h2>
+                </div>
+              </div>
+
+              <div class="ai-metric-card glass">
+                <div class="ai-card-icon idle"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="ai-card-content">
+                  <span class="ai-card-label">Idle Vehicle Alert</span>
+                  <h2 id="ai-stat-idle">2 Vehicles Idle</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recommendations List Table -->
+            <div class="optimizations-list-box glass">
+              <div class="block-header">
+                <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Available Fleet & Route Optimizations</h3>
+                <p>Click "Apply Optimization" to automatically implement cost savings.</p>
+              </div>
+              
+              <div class="table-container" style="border: none; box-shadow: none;">
+                <table class="data-table" id="optimizations-table">
+                  <thead>
+                    <tr>
+                      <th>Optimization Title</th>
+                      <th>Description</th>
+                      <th>Est. Monthly Savings</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="optimizations-list-body">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
